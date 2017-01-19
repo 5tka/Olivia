@@ -1,0 +1,15 @@
+@import "../../../bower_components/susy/sass/_susy";
+$susy: (
+  columns: 12,
+  gutters: 30px/70px,
+  math: fluid,
+  output: float,
+  gutter-position: inside
+);
+.container {
+    @include container(1230px);
+    padding:  {
+        right: 15px;
+        left: 15px;
+    }
+}
