@@ -5,7 +5,7 @@
 // @import "../../../bower_components/960-grid-system/code/css/960_16_col.css"; //960-16
 
 // @import "../../../bower_components/bootstrap-grid-only/css/grid12"; // bootstrap-grid-12
-*{
+* {
     box-sizing: border-box;
 }
 html {
@@ -16,9 +16,14 @@ html {
     -webkit-tap-highlight-color: transparent;
     font-size: 100%;
 }
+html,
+body {
+    font-family: "Open Sans", sans-serif;
+    font: 16px;
+    font-weight: 400;
+}
 body {
     margin: 0;
-    font: 16px;
 }
 iframe {
     border: 0;
@@ -87,5 +92,3 @@ img {
     height: auto;
     border: 0;
 }
-
-
