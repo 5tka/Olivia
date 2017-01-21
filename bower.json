@@ -23,7 +23,8 @@
     "normalize-css": "latest",
     "owl.carousel": "latest",
     "bootstrap-grid-only": "latest",
-    "susy": "^2.2.12"
+    "susy": "^2.2.12",
+    "fancybox": "^2.1.6"
   },
   "devDependencies": {
     "reset-css": "latest",

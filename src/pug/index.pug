@@ -1,1 +1,141 @@
 extends _layout.pug
+block main
+	section.preglagaem
+		.container
+			.title.title_green
+				| Что мы предлагаем?
+			p.preglagaem_desc
+				| 20 лет опыта в сфере производства товаров для здоровья и сотрудничество с <br>научно-исследовательскими группами - это позволило нам реализовать идею Владимира Толстунова. <br> Отечественный изобретатель разработал сиденье-тренажер двух видов - для взрослых и детей.
+			.blocks-wrap
+				.preglagaem__block
+					.preglagaem__img-wrap
+						img(src='img/prod1.png' alt='Спина ОК')
+					.preglagaem__block-title «Спина ОК»
+					.preglagaem__block-desc
+						p
+							| Устройство изготовлено из дерева и полушерсти. Использовать его могут все члены семьи: сиденье универсального размера снабжено регулировкой степени фиксации, при этом единственное противопоказание - перелом позвоночника. Устанавливайте тренажер на любое кресло, кроме сиденья автомобиля во время езды.
+					.preglagaem__bottom
+						.price-line
+							.left-side
+								.discount-wrap
+									.discount-text Новогодняя скидка -
+									p.discount-amount 20%
+							.right-side
+								.price-wrap
+									span.text Стоимость -
+									span.amount 4 850 руб.
+						.buy-line
+							a.preglagaem__buy-link.btn.btn_gr(href='#') Купить по скидке
+				.preglagaem__block
+					.preglagaem__img-wrap
+						img(src='img/prod2.png' alt='Сидушка 3D')
+					.preglagaem__block-title Сидушка 3D
+					p.preglagaem__block-desc
+						| Около 90% детей страдают из-за нарушений осанки. В 20% случаев малоподвижный способ проведения досуга современного ребенка становится причиной развития сколиоза. Именно поэтому стоит позаботиться о здоровье малыша заранее. Прибор, оснащенный тремя ребрами жесткости, рассчитанный на вес до 85 кг.
+					.preglagaem__bottom
+						.price-line
+							.left-side
+								.discount-wrap
+									.discount-text Новогодняя скидка -
+									p.discount-amount 20%
+							.right-side
+								.price-wrap
+									span.text Стоимость -
+									span.amount 4 850 руб.
+						.buy-line
+							a.preglagaem__buy-link.btn.btn_gr(href='#') Купить по скидке
+	section.dostich
+		.container
+			.dostich__title-wrap
+				.title.title_blue
+					| Как достичь
+				.subtitle.title.title_green максимального эффекта?
+			ul.dostich__list
+				li.dostich__item
+					p.number 01
+					p.text Закрепите стойку сиденья на опорную площадку
+				li.dostich__item
+					p.number 02
+					p.text Проследите, чтобы передняя кромка сиденья не касалась опоры
+				li.dostich__item
+					p.number 03
+					p.text Оптимальный угол наклона 10-15 градусов, при этом ноги должны касаться пола
+				li.dostich__item
+					p.number 04
+					p.text Выполняйте покачивания туловища, не удерживая сиденье руками
+				li.dostich__item
+					p.number 05
+					p.text Контролируйте нагрузку на позвоночник, поставив ноги на пол
+			.dostich__content-wrap
+				.img-wrap
+					img(src='img/player.jpg' alt='Как достичь видео')
+					a.play(href='#')
+						img(src='img/play_white.png' alt='play')
+				.content-side
+					strong.subtitle
+						| Для получения желаемого результата занимайтесь на тренажере по 15-20 минут, 3-4 раза в день.
+					p Спустя неделю после первого использования применять сиденье можно на протяжении всего рабочего дня! Уже через несколько недель вы заметите общее улучшение самочувствия, а спустя 2-3 месяца полностью избавитесь от болезней позвоночника!
+	section.recieve
+		.container
+			.recieve__title-wrap
+				.title.title_blue
+					| Что вы получите
+				.subtitle.title.title_green в результате?
+			ul.recieve_list
+				li.recieve_item
+					.img-wrap
+						img(src='img/recieve_human.png' alt='бодрость')
+					.text Ощущение бодрости каждое утро и легкости в теле вечером
+				li.recieve_item
+					.img-wrap
+						img(src='img/recieve_pills.png' alt='таблетки')
+					.text Устранение первопричин серьезных заболеваний
+				li.recieve_item
+					.img-wrap
+						img(src='img/recieve_monitor.png' alt='телевизор')
+					.text "Гимнастика у телевизора" - тренировка мышц без изнуряющих упражнений
+				li.recieve_item
+					.img-wrap
+						img(src='img/recieve_clocks.png' alt='время')
+					.text Экономия времени при сочетании занятий с работой, учебой или отдыхом
+	section.vlogenie
+		.container
+			.vlogenie-wrap
+				.vlogenie-title
+					p.title Сделайте вложение в свое здоровье
+					p.subtitle до 31 декабря и получите скидку на тренажер 30%!
+					a.btn.btn_gr(href='#') Получить консультацию
+	section.guarantees
+		.container
+			.guarantees__title-wrap
+				.title.title_blue
+					| Какие гарантии
+				.subtitle.title.title_green качества?
+			.guarantees__content-wrap
+				p Сиденье «Спина ОК» одобрен Центром Кинезитерапии, ключевое направление которого - поиск инновационных решений в сфере комплексного оздоровления воздействием на мышцы.
+				p Детский тренажер «Сидушка 3D» рекомендовано к применению в медицинской практике ФГБУ «МНИИ педиатрии и детской хирургии» Минздрава России.
+			ul.guarantees__sertificates
+				li.guarantees__sertificates-item
+					a.setrificate.fancybox(href='img/sertificate.jpg' rel="sertificates")
+						img(src='img/sertificate.jpg' alt='sertif')
+				li.guarantees__sertificates-item
+					a.setrificate.fancybox(href='img/sertificate.jpg' rel="sertificates")
+						img(src='http://www.alebedev.ru/storage/b/2011/02/15/22.jpg' alt='sertif')
+				li.guarantees__sertificates-item
+					a.setrificate.fancybox(href='img/sertificate.jpg' rel="sertificates")
+						img(src='img/sertificate.jpg' alt='sertif')
+				li.guarantees__sertificates-item
+					a.setrificate.fancybox(href='img/sertificate.jpg' rel="sertificates")
+						img(src='img/sertificate.jpg' alt='sertif')
+	section.comment
+		.container
+			.comment__title-wrap
+				.title.title_white
+					| Какие гарантии
+				.subtitle.title.title_green качества?
+	section.location
+		.container
+			.location__title-wrap
+				.title.title_blue
+					| Как нас найти?
+			#map_canvas
