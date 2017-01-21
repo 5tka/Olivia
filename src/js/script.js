@@ -7,11 +7,36 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
 $( document ).ready(function() { // начало document.ready
 
+    //First get theiframe URL
+    var url = $('#video').attr('src');
+
+    //Then assign the src to null, this then stops the video been playing
+    // $('#video').attr('src', '');
+
+    // Finally you reasign the URL back to your iframe, so when you hide and load it again you still have the link
+    // $('#video').attr('src', url);
 
 
+	$('.mnu-trigger #nav-icon').click(function(){
+        $('.header-mnu').toggleClass('db');
+		$(this).toggleClass('open');
+	});
 
-
-
+    $('.video-controls').on('click',function(){
+        $("#video")[0].src += "&autoplay=1";
+        $('.itWorks-video-popup').bPopup({
+            modalClose: false,
+            transition: 'slideBack',
+            transitionClose: 'slideIn',
+            closeClass:'popup-close'
+        });
+        return false;        
+    });
+    
+    $('.popup-close').on('click',function(){
+        $('#video').attr('src', '');
+        $('#video').attr('src', url);
+    });
 
 
 
