@@ -24,13 +24,15 @@
     "owl.carousel": "latest",
     "bootstrap-grid-only": "latest",
     "susy": "^2.2.12",
-    "fancybox": "^2.1.6"
+    "fancybox": "^2.1.6",
+    "animate.css": "^3.5.2"
   },
   "devDependencies": {
     "reset-css": "latest",
     "bxslider": "latest",
     "bxslider-4": "^4.2.5",
     "slick": "*",
-    "jquery-mousewheel": "^3.1.13"
+    "jquery-mousewheel": "^3.1.13",
+    "wow": "^1.1.2"
   }
 }

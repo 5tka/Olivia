@@ -75,6 +75,13 @@
         .callBack {
             color: #fff;
             margin-right: 0;
+            &:hover {
+                background-image: -webkit-gradient(linear,left top,right top,from(#6fc754),to(#5cb042));
+                background-image: -webkit-linear-gradient(left,#6fc754,#5cb042);
+                background-image:         linear-gradient(90deg,#6fc754,#5cb042);
+                background-image: -webkit-linear-gradient(90deg,#6fc754,#5cb042);
+                background-image:     -ms-linear-gradient(90deg,#6fc754 0,#5cb042 100%);
+            }
         }
     }
 }
@@ -97,7 +104,15 @@
     -webkit-box-shadow: 0 6px 3px 0 rgba(0,0,0,.1);
        -moz-box-shadow: 0 6px 3px 0 rgba(0,0,0,.1);
             box-shadow: 0 6px 3px 0 rgba(0,0,0,.1);
+    &:hover {
+        background-image: -webkit-gradient(linear,left top,right top,from(#6fc754),to(#5cb042));
+        background-image: -webkit-linear-gradient(left,#6fc754,#5cb042);
+        background-image:         linear-gradient(90deg,#6fc754,#5cb042);
+        background-image: -webkit-linear-gradient(90deg,#6fc754,#5cb042);
+        background-image:     -ms-linear-gradient(90deg,#6fc754 0,#5cb042 100%);
+    }
 }
+
 
 
 .intro-title {
@@ -162,6 +177,14 @@
             margin-right: -45%;
             top: 45px;
         }
+        .i-label {
+            position: relative;
+            display: block;
+        }
+        .p-label {
+            position: relative;
+            display: block;
+        }
     }
     .callBack {
         padding: 15px 50px;
@@ -170,7 +193,48 @@
         box-shadow: none;
     }
 }
-
+.error {
+    &:after {
+        content: "";
+        position: absolute;
+        background: url(../img/error.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 15px;
+        height: 11px;
+        right: 30px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        border-left: 3px solid red !important;
+        height: 48px;
+        left: 0;
+    }
+}
+.ok {
+    &:after {
+        content: "";
+        position: absolute;
+        background: url(../img/ok.png);
+        width: 15px;
+        height: 11px;
+        right: 30px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        border-left: 3px solid #6ec554 !important;
+        height: 48px;
+        left: 0;
+    }
+}
 
 // burger icon
 #nav-icon {
@@ -357,8 +421,8 @@
     .form-wrapper .callBack {
         padding: 13px;
     }
-.container {
 }
+
 
 .bold {
     font-weight: 700;
@@ -549,18 +613,28 @@
         }
     }
 }
-.itWorks-video-popup {
+.itWorks-video-popup,
+.itWorks-video-popup-2 {
     display: none;
     margin: 0 auto;
     position: relative;
     .container {
         padding: 0;
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
     }
     .popup-close {
         cursor: pointer;
         position: absolute;
         top: -15px;
         right: -15px;
+    }
+    iframe {
+        width: 560px;
+        max-width: 100%;
+        height: 300px;
     }
 }
 @include breakpoint(900) {
@@ -576,6 +650,14 @@
     }
 }
 @include breakpoint(650) {
+    .itWorks-video-popup,
+    .itWorks-video-popup-2 {
+        iframe {
+            width: 350px;
+            max-width: 100%;
+            // height: 300px;
+        }
+    }
     .itWorks-video {
         width: 80%;
     }
@@ -851,5 +933,58 @@
 @include breakpoint(410) {
     .problems-img .number {
         font-size: 80px;
+    }
+    .itWorks-video-popup,
+    .itWorks-video-popup-2 {
+        iframe {
+            // width: 250px;
+            width: 100%;
+            max-width: 100%;
+            height: 300px;
+        }
+    }
+}
+
+
+
+.form-popup-valid {
+    display: none;
+    .form-wrapper {
+        padding: 0;
+    }
+    .form-title {
+        padding: 35px;
+        background: #2e4159;
+        color: #fff;
+    }
+    .form-controls {
+        margin: 0 35px;
+        margin-bottom: 40px;
+        input {
+            font-size: 16px;
+            color: #2e4159;
+        }
+    }
+    .form-buttons {
+        @include clearfix;
+        .callBack {
+            @include border-radius(0);
+            &:first-child {
+                float: left;
+                width: 50%;
+                background: #f7f8f9;
+                font-size: 16px;
+                color: #a0a0a0;
+                text-transform: capitalize;
+            }
+            &:last-child {
+                float: right;
+                width: 50%;
+                background: #6ec554;
+                font-size: 16px;
+                color: #fff;
+                text-transform: capitalize;
+            }
+        }
     }
 }

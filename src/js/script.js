@@ -25,8 +25,8 @@ $( document ).ready(function() { // начало document.ready
     $("a.fancybox").fancybox();
 
 
-    $('.video-controls').on('click',function(){
-        $("#video")[0].src += "&autoplay=1";
+    $('.video-preview .video-controls').on('click',function(){
+        $(".itWorks-video-popup #video")[0].src += "&autoplay=1";
         $('.itWorks-video-popup').bPopup({
             modalClose: false,
             transition: 'slideBack',
@@ -36,19 +36,109 @@ $( document ).ready(function() { // начало document.ready
         return false;        
     });
     
-    $('.popup-close').on('click',function(){
-        $('#video').attr('src', '');
-        $('#video').attr('src', url);
+    $('.img-wrap .play').on('click',function(){
+        $(".itWorks-video-popup-2 #video")[0].src += "&autoplay=1";
+        $('.itWorks-video-popup-2').bPopup({
+            modalClose: false,
+            transition: 'slideBack',
+            transitionClose: 'slideIn',
+            closeClass:'popup-close'
+        });
+        return false;        
+    });
+
+    $('.itWorks-video-popup .popup-close').on('click',function(){
+        $('.itWorks-video-popup #video').attr('src', '');
+        $('.itWorks-video-popup #video').attr('src', url);
+    });
+    $('.itWorks-video-popup-2 .popup-close').on('click',function(){
+        $('.itWorks-video-popup-2 #video').attr('src', '');
+        $('.itWorks-video-popup-2 #video').attr('src', url);
+    });
+
+
+
+    $('.modal-section .callBack').on('click',function(){
+        $('.form-popup-valid').bPopup({
+            modalClose: false,
+            transition: 'slideBack',
+            transitionClose: 'slideIn',
+            closeClass:'callOut'
+        });
+        return false;
     });
 
 
 
 
 
+        $('.i-phone').mask("+9 (999) 999-99-99");
+
+        var pattern = /^[A-Za-zА-Яа-я\w]{1,15}/;
+		var mail = $('#name');
+		var phone = $('#phone');
+		var mail_h = $('#name_h');
+		var phone_h = $('#phone_h');
+		mail.focusout(function(){
+            // console.log(mail.val());
+			if(mail.val() != ''){
+				if(mail.val().search(pattern) == 0){
+                    $('.form-popup-valid .i-label').removeClass('error').addClass('ok');
+				}else{
+					mail.addClass('error');
+				}
+			}
+            else{
+                $('.form-popup-valid .i-label').removeClass('ok').addClass('error');    
+			}
+		});
+
+		phone.focusout(function(){
+            // console.log(typeof(phone.val()));            
+            var vNumber = phone.val();
+
+            if(vNumber.match(/\d/g) !== null && vNumber.match(/\d/g).length == 11){
+                $('.form-popup-valid .p-label').removeClass('error').addClass('ok');
+			}
+            else{
+                $('.form-popup-valid .p-label').removeClass('ok').addClass('error');
+			}
+		});
 
 
 
 
+
+		mail_h.focusout(function(){
+            // console.log(mail.val());
+			if(mail_h.val() != ''){
+				if(mail_h.val().search(pattern) == 0){
+                    $('.intro-form .i-label').removeClass('error').addClass('ok');
+				}else{
+					mail_h.addClass('error');
+				}
+			}
+            else{
+                $('.intro-form .i-label').removeClass('ok').addClass('error');    
+			}
+		});
+
+		phone_h.focusout(function(){
+            // console.log(typeof(phone.val()));            
+            var vNumber_h = phone_h.val();
+
+            if(vNumber_h.match(/\d/g) !== null && vNumber_h.match(/\d/g).length == 11){
+                $('.intro-form .p-label').removeClass('error').addClass('ok');
+			}
+            else{
+                $('.intro-form .p-label').removeClass('ok').addClass('error');
+			}
+		});
+
+
+
+
+        
 
 
 

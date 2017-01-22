@@ -25,7 +25,7 @@ header.header
                     span
     .header__intro-container
         .container
-            .intro-title
+            .intro-title.wow.slideInDown
                 h1
                     | Сиденье <br>
                     span
@@ -41,18 +41,18 @@ header.header
                     form(action="/")
                         .form-controls
                             label.i-label(for="name")
-                                input.i-name(type="text" placeholder="Имя")
-                            label(for="name")
-                                input.i-phone(type="text" placeholder="Телефон")
+                                input.i-name(type="text" id="name_h" placeholder="Имя")
+                            label.p-label(for="phone")
+                                input.i-phone(type="text" id="phone_h" placeholder="Телефон")
                         button(type="submit").callBack
                             | Получить тренажер по скидке
 section.forWhom
     .container
-        h2.title
+        h2.title.wow.slideInLeft
             | Для кого создано
         span.sub-title
             | сиденье-тренажер?
-        .forWhom-dscr
+        .forWhom-dscr.wow.fadeIn(data-wow-delay=".3s")
             p
                 span.bold "Лечение движением" 
                 | - суть действия тренажера, разработанного 
@@ -61,7 +61,7 @@ section.forWhom
                 |ограниченных физических нагрузках, перенесенных 
                 |травмах или просто хронической усталости.
         .forWhom-items.fl-l
-            .forWhom-item
+            .forWhom-item.wow.fadeInDown
                 .f-icon
                     img(src="img/whom-icon-1.png", alt="")
                 .f-dscr
@@ -70,7 +70,7 @@ section.forWhom
                         рабочем месте за счет применения 
                         "Спина ОК" - реальность для 
                         руководителей и офисных сотрудников
-            .forWhom-item
+            .forWhom-item.wow.fadeInDown(data-wow-delay='.5s')
                 .f-icon
                     img(src="img/whom-icon-3.png", alt="")
                 .f-dscr
@@ -79,7 +79,7 @@ section.forWhom
                         тренажер во время выполнения домашних 
                         заданий, установив его на любое кресло
         .forWhom-items.fl-r
-            .forWhom-item
+            .forWhom-item.wow.fadeInDown(data-wow-delay='.7s')
                 .f-icon
                     img(src="img/whom-icon-2.png", alt="")
                 .f-dscr
@@ -88,7 +88,7 @@ section.forWhom
                         и времени на физические тренировки - 
                         больше не проблема для профессиональных 
                         водителей
-            .forWhom-item
+            .forWhom-item.wow.fadeInDown(data-wow-delay='.9s')
                 .f-icon
                     img(src="img/whom-icon-4.png", alt="")
                 .f-dscr
@@ -100,9 +100,9 @@ section.forWhom
                 
 section.itWorks
     .container
-        h2.title
+        h2.title.wow.slideInLeft
             | Как это работает?
-        .forWhom-dscr
+        .forWhom-dscr.wow.fadeIn(data-wow-delay=".3s")
             p.
                 Принцип работы "подвижного сиденья" 
                 основан на исследованиях в области 
@@ -114,7 +114,7 @@ section.itWorks
                 образом, без медицинского вмешательства, 
                 а регулярные тренировки обеспечивают 
                 длительный эффект.
-        .itWorks-video
+        .itWorks-video.wow.slideInLeft
             .video-preview
                 img(src="img/preview.jpg", alt="")
                 .video-controls
@@ -130,12 +130,12 @@ section.itWorks
                 p.
                     Действие сиденья-тренажера отличается от эффекта, которое <br> дают физические упражнения, массаж и другие методы стимуляции <br> активности вестибулярного аппарата рядом особенностей.
             ul
-                li Короткие мышцы позвоночника находятся под слоем других тканей и недосягаемы при массаже. Балансирующие движения во время использования сиденья приводят к естественному восстановлению их тонуса.
-                li Именно этими мышцами управлять осознанно человек не способен, что делает невозможным полную проработку позвоночника с помощью тренировок в спортзале.
-                li Мускулатура позвоночника "запоминает" форму, в которой находится продолжительное время. За счет этого свойства вы получите длительный эффект от регулярного применения тренажера. 
+                li.wow.fadeInDown Короткие мышцы позвоночника находятся под слоем других тканей и недосягаемы при массаже. Балансирующие движения во время использования сиденья приводят к естественному восстановлению их тонуса.
+                li.wow.fadeInDown(data-wow-delay=".5s") Именно этими мышцами управлять осознанно человек не способен, что делает невозможным полную проработку позвоночника с помощью тренировок в спортзале.
+                li.wow.fadeInDown(data-wow-delay="1s") Мускулатура позвоночника "запоминает" форму, в которой находится продолжительное время. За счет этого свойства вы получите длительный эффект от регулярного применения тренажера. 
 
 section.modal-section
-    .container
+    .container.wow.flipInX
         h2
             | Узнайте больше о применении сиденья-тренажера - 
         span
@@ -145,11 +145,11 @@ section.modal-section
 
 section.problems
     .container
-        h2.title
+        h2.title.wow.slideInLeft
             | Какие проблемы решает
         span.sub-title
             | универсальный тренажер?
-        .forWhom-dscr
+        .forWhom-dscr.wow.fadeIn(data-wow-delay=".3s")
             p.
                 Благодаря ускорению обменных 
                 процессов налаживается питание 
@@ -161,7 +161,7 @@ section.problems
                 заряда бодрости.
         .problems-items
             .problems-item
-                .problems-img.fl-l
+                .problems-img.fl-l.wow.slideInLeft
                     img(src="img/photo-1.jpg", alt="")
                     .number
                         span
@@ -170,14 +170,14 @@ section.problems
                         | 01
                 .problems-dscr.fl-r
                     ol
-                        li Положительно влияет на работу нервной системы и способствет улучшению зрения
-                        li Помогает справиться с ишемичной болезнью и варикозным расширением вен
-                        li Является эффективным методом профилактики и лечения остеохондроза и сколиоза в любом возрасте
-                        li Питает ткани и препятствует образованию межпозвонковых грыж всех отделов позвоночника
-                        li Эффективное противодействие простатиту, геморрою, варикозному расширению вен, воспалению мочеполовых органов
-                        li За счет иммитации верховой езды формирует мышечный корсет спины и крепкую опору для позвоночника
+                        li.wow.fadeInDown Положительно влияет на работу нервной системы и способствет улучшению зрения
+                        li.wow.fadeInDown(data-wow-delay='.3s') Помогает справиться с ишемичной болезнью и варикозным расширением вен
+                        li.wow.fadeInDown(data-wow-delay='.5s') Является эффективным методом профилактики и лечения остеохондроза и сколиоза в любом возрасте
+                        li.wow.fadeInDown(data-wow-delay='.7s') Питает ткани и препятствует образованию межпозвонковых грыж всех отделов позвоночника
+                        li.wow.fadeInDown(data-wow-delay='.9s') Эффективное противодействие простатиту, геморрою, варикозному расширению вен, воспалению мочеполовых органов
+                        li.wow.fadeInDown(data-wow-delay='1.1s') За счет иммитации верховой езды формирует мышечный корсет спины и крепкую опору для позвоночника
             .problems-item
-                .problems-img.problems-img-2.fl-r
+                .problems-img.problems-img-2.fl-r.wow.slideInRight
                     img(src="img/photo-2.jpg", alt="")
                     .number
                         span
@@ -186,16 +186,35 @@ section.problems
                         | 02
                 .problems-dscr.fl-l
                     ol(start="7")
-                        li Устраняет боли в спине, чувство зажатости в мышцах после рабочего дня
-                        li Корректирует осанку, снимая нагрузку с межпозвоночных дисков
-                        li Избавляет от сколиоза, радикулита, остеохондроза, грыжи межпозвонковых дисков
-                        li Предотвращает гинекологические и мужские заболевания за счет усиления кровообращения в тазовом дне
-                        li Снимает хроническую усталость, улучшает сон и самочувствие
-                        li Компенсирует дефицит движений, восстанавливает после травм и операций
+                        li.wow.fadeInDown Устраняет боли в спине, чувство зажатости в мышцах после рабочего дня
+                        li.wow.fadeInDown(data-wow-delay='.3s') Корректирует осанку, снимая нагрузку с межпозвоночных дисков
+                        li.wow.fadeInDown(data-wow-delay='.5s') Избавляет от сколиоза, радикулита, остеохондроза, грыжи межпозвонковых дисков
+                        li.wow.fadeInDown(data-wow-delay='.7s') Предотвращает гинекологические и мужские заболевания за счет усиления кровообращения в тазовом дне
+                        li.wow.fadeInDown(data-wow-delay='.9s') Снимает хроническую усталость, улучшает сон и самочувствие
+                        li.wow.fadeInDown(data-wow-delay='1.1s') Компенсирует дефицит движений, восстанавливает после травм и операций
 
 
 .itWorks-video-popup
     .container
         .popup-close
             img(src="img/close.png", alt="")
-        iframe#video(width='560', height='315', src='https://www.youtube.com/embed/RmaQaqssUgk?rel-0', frameborder='0', allowfullscreen='')
+        iframe#video(src='https://www.youtube.com/embed/RmaQaqssUgk?rel-0', frameborder='0', allowfullscreen='allowfullscreen')
+
+
+.form-popup-valid
+    .form-wrapper
+        .form-title
+            p Заполните форму, <br>
+            span и мы свяжемся с Вами в течение 30 минут 
+        .form-container
+            form(action="/")
+                .form-controls
+                    label.i-label(for="name")
+                        input.i-name(type="text" id="name" placeholder="Имя")
+                    label.p-label(for="phone")
+                        input.i-phone(type="text" id="phone" placeholder="Телефон")
+            .form-buttons
+                a(href="#").callBack.callOut
+                    | Отмена
+                button(type="submit" id="submit").callBack
+                    | Отправить

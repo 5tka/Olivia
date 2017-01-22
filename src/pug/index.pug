@@ -2,12 +2,12 @@ extends _layout.pug
 block main
 	section.preglagaem
 		.container
-			.title.title_green
+			.title.title_green.wow.slideInLeft
 				| Что мы предлагаем?
-			p.preglagaem_desc
+			p.preglagaem_desc.wow.fadeIn(data-wow-delay=".3s")
 				| 20 лет опыта в сфере производства товаров для здоровья и сотрудничество с <br>научно-исследовательскими группами - это позволило нам реализовать идею Владимира Толстунова. <br> Отечественный изобретатель разработал сиденье-тренажер двух видов - для взрослых и детей.
 			.blocks-wrap
-				.preglagaem__block
+				.preglagaem__block.wow.fadeInLeft
 					.preglagaem__img-wrap
 						img(src='img/prod1.png' alt='Спина ОК')
 					.preglagaem__block-title «Спина ОК»
@@ -26,7 +26,7 @@ block main
 									span.amount 4 850 руб.
 						.buy-line
 							a.preglagaem__buy-link.btn.btn_gr(href='#') Купить по скидке
-				.preglagaem__block
+				.preglagaem__block.wow.fadeInRight(data-wow-delay=".5s")
 					.preglagaem__img-wrap
 						img(src='img/prod2.png' alt='Сидушка 3D')
 					.preglagaem__block-title Сидушка 3D
@@ -47,60 +47,60 @@ block main
 	section.dostich
 		.container
 			.dostich__title-wrap
-				.title.title_blue
+				.title.title_blue.wow.slideInLeft
 					| Как достичь
 				.subtitle.title.title_green максимального эффекта?
 			ul.dostich__list
-				li.dostich__item
+				li.dostich__item.wow.fadeInRight
 					p.number 01
 					p.text Закрепите стойку сиденья на опорную площадку
-				li.dostich__item
+				li.dostich__item.wow.fadeInRight(data-wow-delay=".5s")
 					p.number 02
 					p.text Проследите, чтобы передняя кромка сиденья не касалась опоры
-				li.dostich__item
+				li.dostich__item.wow.fadeInRight(data-wow-delay=".7s")
 					p.number 03
 					p.text Оптимальный угол наклона 10-15 градусов, при этом ноги должны касаться пола
-				li.dostich__item
+				li.dostich__item.wow.fadeInRight(data-wow-delay=".9s")
 					p.number 04
 					p.text Выполняйте покачивания туловища, не удерживая сиденье руками
-				li.dostich__item
+				li.dostich__item.wow.fadeInRight(data-wow-delay="1.1s")
 					p.number 05
 					p.text Контролируйте нагрузку на позвоночник, поставив ноги на пол
 			.dostich__content-wrap
-				.img-wrap
+				.img-wrap.wow.slideInLeft
 					img(src='img/player.jpg' alt='Как достичь видео')
 					a.play(href='#')
 						img(src='img/play_white.png' alt='play')
-				.content-side
+				.content-side.wow.slideInRight
 					strong.subtitle
 						| Для получения желаемого результата занимайтесь на тренажере по 15-20 минут, 3-4 раза в день.
 					p Спустя неделю после первого использования применять сиденье можно на протяжении всего рабочего дня! Уже через несколько недель вы заметите общее улучшение самочувствия, а спустя 2-3 месяца полностью избавитесь от болезней позвоночника!
 	section.recieve
 		.container
 			.recieve__title-wrap
-				.title.title_blue
+				.title.title_blue.wow.slideInLeft
 					| Что вы получите
 				.subtitle.title.title_green в результате?
 			ul.recieve_list
-				li.recieve_item
+				li.recieve_item.wow.fadeInDown(data-wow-delay=".2s")
 					.img-wrap
 						img(src='img/recieve_human.png' alt='бодрость')
 					.text Ощущение бодрости каждое утро и легкости в теле вечером
-				li.recieve_item
+				li.recieve_item.wow.fadeInUp(data-wow-delay=".4s")
 					.img-wrap
 						img(src='img/recieve_pills.png' alt='таблетки')
 					.text Устранение первопричин серьезных заболеваний
-				li.recieve_item
+				li.recieve_item.wow.fadeInDown(data-wow-delay=".6s")
 					.img-wrap
 						img(src='img/recieve_monitor.png' alt='телевизор')
 					.text "Гимнастика у телевизора" - тренировка мышц без изнуряющих упражнений
-				li.recieve_item
+				li.recieve_item.wow.fadeInUp(data-wow-delay=".8s")
 					.img-wrap
 						img(src='img/recieve_clocks.png' alt='время')
 					.text Экономия времени при сочетании занятий с работой, учебой или отдыхом
 	section.vlogenie
 		.container
-			.vlogenie-wrap
+			.vlogenie-wrap.wow.flipInX
 				.vlogenie-title
 					p.title Сделайте вложение в свое здоровье
 					p.subtitle до 31 декабря и получите скидку на тренажер 30%!
@@ -108,23 +108,23 @@ block main
 	section.guarantees
 		.container
 			.guarantees__title-wrap
-				.title.title_blue
+				.title.title_blue.wow.slideInLeft
 					| Какие гарантии
 				.subtitle.title.title_green качества?
-			.guarantees__content-wrap
+			.guarantees__content-wrap.wow.fadeIn(data-wow-delay=".3s")
 				p Сиденье «Спина ОК» одобрен Центром Кинезитерапии, ключевое направление которого - поиск инновационных решений в сфере комплексного оздоровления воздействием на мышцы.
 				p Детский тренажер «Сидушка 3D» рекомендовано к применению в медицинской практике ФГБУ «МНИИ педиатрии и детской хирургии» Минздрава России.
 			ul.guarantees__sertificates
-				li.guarantees__sertificates-item
+				li.guarantees__sertificates-item.wow.fadeInDown(data-wow-delay=".2s")
 					a.setrificate.fancybox(href='img/sertificate.jpg' rel="sertificates")
 						img(src='img/sertificate.jpg' alt='sertif')
-				li.guarantees__sertificates-item
+				li.guarantees__sertificates-item.wow.fadeInUp(data-wow-delay=".4s")
 					a.setrificate.fancybox(href='img/sertificate.jpg' rel="sertificates")
 						img(src='http://www.alebedev.ru/storage/b/2011/02/15/22.jpg' alt='sertif')
-				li.guarantees__sertificates-item
+				li.guarantees__sertificates-item.wow.fadeInDown(data-wow-delay=".6s")
 					a.setrificate.fancybox(href='img/sertificate.jpg' rel="sertificates")
 						img(src='img/sertificate.jpg' alt='sertif')
-				li.guarantees__sertificates-item
+				li.guarantees__sertificates-item.wow.fadeInUp(data-wow-delay=".8s")
 					a.setrificate.fancybox(href='img/sertificate.jpg' rel="sertificates")
 						img(src='img/sertificate.jpg' alt='sertif')
 	section.comment
@@ -139,3 +139,9 @@ block main
 				.title.title_blue
 					| Как нас найти?
 			#map_canvas
+
+	.itWorks-video-popup-2
+		.container
+			.popup-close
+				img(src="img/close.png", alt="")
+			iframe#video(src='https://www.youtube.com/embed/TqRiGqLptrU?rel-0', frameborder='0', allowfullscreen='allowfullscreen')
