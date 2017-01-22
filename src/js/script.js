@@ -7,56 +7,91 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
 $( document ).ready(function() { // начало document.ready
 
-$("a.fancybox").fancybox();
+    //First get theiframe URL
+    var url = $('#video').attr('src');
 
-function currentHashSlider() {
-    $('.owl-item.active').find('*[data-hash]').each(function(){
-        var hash=$(this).data('hash');
-        $('a[href="#'+hash+'"]').click();
-    })
-}
+    //Then assign the src to null, this then stops the video been playing
+    // $('#video').attr('src', '');
 
-$(".comment-slider").owlCarousel({
-    items: 1,
-    URLhashListener:true,
-    dots: true,
-    // autoplay: true,
-    nav:true,
-    onTranslated : currentHashSlider
-});
+    // Finally you reasign the URL back to your iframe, so when you hide and load it again you still have the link
+    // $('#video').attr('src', url);
+
+
+	$('.mnu-trigger #nav-icon').click(function(){
+        $('.header-mnu').toggleClass('db');
+		$(this).toggleClass('open');
+	});
 
 
 
-$(".hashNav-item").on('click',  function activeSlide(event) {
-    // event.preventDefault();
-    if (!$(this).hasClass('active')) {
-        /* Act on the event */
-        var current = $(this),
-            prev= current.prev(),
-            next= current.next(),
-            parentHash = current.closest('.hashNav'),
-            hashes = parentHash.find(".hashNav-item");
-            // очистка
-        parentHash.find('.active').removeClass('active');
-        parentHash.find('.visible').removeClass('visible');
-            //
-        current.addClass('active visible');
+    $('.video-controls').on('click',function(){
+        $("#video")[0].src += "&autoplay=1";
+        $('.itWorks-video-popup').bPopup({
+            modalClose: false,
+            transition: 'slideBack',
+            transitionClose: 'slideIn',
+            closeClass:'popup-close'
+        });
+        return false;
+    });
 
-        if (hashes.first().hasClass('active')) {
-            next.addClass('visible').next().addClass('visible');
-        }
-        if (hashes.last().hasClass('active')) {
-            prev.addClass('visible').prev().addClass('visible');
-        } else {
-            next.addClass('visible');
-            prev.addClass('visible');
-        }
+    $('.popup-close').on('click',function(){
+        $('#video').attr('src', '');
+        $('#video').attr('src', url);
+    });
+
+    /* xeonalex start */
+    function currentHashSlider() {
+        $('.owl-item.active').find('*[data-hash]').each(function(){
+            var hash=$(this).data('hash');
+            $('a[href="#'+hash+'"]').click();
+        })
     }
-    // return false;
-});
+    $("a.fancybox").fancybox();
 
-currentHashSlider();
-// alert('1');
+    $(".comment-slider").owlCarousel({
+        items: 1,
+        URLhashListener:true,
+        dots: true,
+        // autoplay: true,
+        nav:true,
+        onTranslated : currentHashSlider
+    });
+
+
+
+    $(".hashNav-item").on('click',  function activeSlide(event) {
+        // event.preventDefault();
+        if (!$(this).hasClass('active')) {
+            /* Act on the event */
+            var current = $(this),
+                prev= current.prev(),
+                next= current.next(),
+                parentHash = current.closest('.hashNav'),
+                hashes = parentHash.find(".hashNav-item");
+                // очистка
+            parentHash.find('.active').removeClass('active');
+            parentHash.find('.visible').removeClass('visible');
+                //
+            current.addClass('active visible');
+
+            if (hashes.first().hasClass('active')) {
+                next.addClass('visible').next().addClass('visible');
+            }
+            if (hashes.last().hasClass('active')) {
+                prev.addClass('visible').prev().addClass('visible');
+            } else {
+                next.addClass('visible');
+                prev.addClass('visible');
+            }
+        }
+        // return false;
+    });
+
+    currentHashSlider();
+    // alert('1');
+    /* xeonalex END */
+
 
 
 
