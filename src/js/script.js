@@ -22,7 +22,6 @@ $( document ).ready(function() { // начало document.ready
 		$(this).toggleClass('open');
 	});
 
-    $("a.fancybox").fancybox();
 
 
     $('.video-preview .video-controls').on('click',function(){
@@ -33,7 +32,7 @@ $( document ).ready(function() { // начало document.ready
             transitionClose: 'slideIn',
             closeClass:'popup-close'
         });
-        return false;        
+        return false;
     });
     
     $('.img-wrap .play').on('click',function(){
@@ -54,8 +53,63 @@ $( document ).ready(function() { // начало document.ready
     $('.itWorks-video-popup-2 .popup-close').on('click',function(){
         $('.itWorks-video-popup-2 #video').attr('src', '');
         $('.itWorks-video-popup-2 #video').attr('src', url);
+
+    $('.popup-close').on('click',function(){
+        $('#video').attr('src', '');
+        $('#video').attr('src', url);
     });
 
+    /* xeonalex start */
+    function currentHashSlider() {
+        $('.owl-item.active').find('*[data-hash]').each(function(){
+            var hash=$(this).data('hash');
+            $('a[href="#'+hash+'"]').click();
+        })
+    }
+    $("a.fancybox").fancybox();
+
+    $(".comment-slider").owlCarousel({
+        items: 1,
+        URLhashListener:true,
+        dots: true,
+        // autoplay: true,
+        nav:true,
+        onTranslated : currentHashSlider
+    });
+
+
+
+    $(".hashNav-item").on('click',  function activeSlide(event) {
+        // event.preventDefault();
+        if (!$(this).hasClass('active')) {
+            /* Act on the event */
+            var current = $(this),
+                prev= current.prev(),
+                next= current.next(),
+                parentHash = current.closest('.hashNav'),
+                hashes = parentHash.find(".hashNav-item");
+                // очистка
+            parentHash.find('.active').removeClass('active');
+            parentHash.find('.visible').removeClass('visible');
+                //
+            current.addClass('active visible');
+
+            if (hashes.first().hasClass('active')) {
+                next.addClass('visible').next().addClass('visible');
+            }
+            if (hashes.last().hasClass('active')) {
+                prev.addClass('visible').prev().addClass('visible');
+            } else {
+                next.addClass('visible');
+                prev.addClass('visible');
+            }
+        }
+        // return false;
+    });
+
+    currentHashSlider();
+    // alert('1');
+    /* xeonalex END */
 
 
     $('.modal-section .callBack').on('click',function(){
@@ -158,15 +212,16 @@ function initialize() {
     // задаем параметры карты
     var mapOptions = {
         //Это центр куда спозиционируется наша карта при загрузке
-        center: new google.maps.LatLng(55.0114716, 82.9372195),
+        center: new google.maps.LatLng(55.0114716, 82.93961906),
         //увеличение под которым будет карта, от 0 до 18
         // 0 - минимальное увеличение - карта мира
         // 18 - максимально детальный масштаб
-        zoom: 9,
-        scrollwheel: false,
-        styles: [{"featureType":"administrative","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":-100},{"lightness":"50"},{"visibility":"simplified"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"lightness":"30"}]},{"featureType":"road.local","elementType":"all","stylers":[{"lightness":"40"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]},{"featureType":"water","elementType":"labels","stylers":[{"lightness":-25},{"saturation":-100}]}]
+        zoom: 16,
+        scrollwheel: true,
+        disableDefaultUI: true,
+        // styles: [{"featureType":"administrative","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":-100},{"lightness":"50"},{"visibility":"simplified"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"lightness":"30"}]},{"featureType":"road.local","elementType":"all","stylers":[{"lightness":"40"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]},{"featureType":"water","elementType":"labels","stylers":[{"lightness":-25},{"saturation":-100}]}]
         //Тип карты - обычная дорожная карта
-        // mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     //Инициализируем карту
     var map = new google.maps.Map(mapCanvas, mapOptions);
@@ -180,9 +235,9 @@ function initialize() {
     for (var i = 0, n = myPlaces.length; i < n; i++) {
 
 				var companyImage = new google.maps.MarkerImage('img/icons/map_marker.png',
-					new google.maps.Size(100,50),
+					new google.maps.Size(145,93),
 					new google.maps.Point(0,0),
-					new google.maps.Point(50,50)
+					new google.maps.Point(0,45)
 				);
 
         var marker = new google.maps.Marker({
@@ -217,3 +272,5 @@ function Place(name, latitude, longitude, description){
 }
 //Когда документ загружен полностью - запускаем инициализацию карты.
 google.maps.event.addDomListener(window, 'load', initialize);
+// $(window).on('resize', function(event) {
+// }); 

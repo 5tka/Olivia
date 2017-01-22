@@ -131,14 +131,97 @@ block main
 		.container
 			.comment__title-wrap
 				.title.title_white
-					| Какие гарантии
-				.subtitle.title.title_green качества?
+					| Что говорят
+				.subtitle.title.title_green наши покупатели?
+			.comment-slider-wrap
+				ul.hashNav
+					li.hashNav-item
+						a.hashNav-link(href='#comment-1')
+							img(src='img/slider/comment/slide-1.jpg')
+					li.hashNav-item
+						a.hashNav-link(href='#comment-2')
+							img(src='img/slider/comment/slide-2.jpg')
+					li.hashNav-item
+						a.hashNav-link(href='#comment-3')
+							img(src='img/slider/comment/slide-3.jpg')
+					li.hashNav-item
+						a.hashNav-link(href='#comment-4')
+							img(src='img/slider/comment/slide-1.jpg')
+					li.hashNav-item
+						a.hashNav-link(href='#comment-5')
+							img(src='img/slider/comment/slide-1.jpg')
+				.comment-slider
+					.comment-slide(data-hash="comment-1")
+						.slider-text
+							.comment-autor Vasya, Россия
+							.comment-text
+								p Всегда буду здесь покупать!
+								p  Ребята, я вас обожаю!
+					.comment-slide(data-hash="comment-2")
+						.slider-text
+							p.comment-autor Elena, Россия
+							.comment-text
+								p Магазин — супер! Всегда буду здесь покупать!
+								p Доставили точно в срок, предварительно позвонили, помогли  и сделали скидку.
+								p  Ребята, я вас обожаю!
+					.comment-slide(data-hash="comment-3")
+						.slider-text
+							.comment-autor Masha, Россия
+							.comment-text
+								p Всегда буду здесь покупать!
+								p Доставили точно в срок, предварительно позвонили, помогли  и сделали скидку.
+					.comment-slide(data-hash="comment-4")
+						.slider-text
+							.comment-autor Kirill, Россия
+							.comment-text
+								p Всегда буду здесь покупать!
+								p Доставили точно в срок, предварительно позвонили, помогли  и сделали скидку.
+					.comment-slide(data-hash="comment-5")
+						.slider-text
+							.comment-autor Fedor, Россия
+							.comment-text
+								p Всегда буду здесь покупать!
+								p Доставили точно в срок, предварительно позвонили, помогли  и сделали скидку.
 	section.location
 		.container
 			.location__title-wrap
 				.title.title_blue
 					| Как нас найти?
-			#map_canvas
+			.map-shedule__wrap
+				#map_canvas
+				.work-schedule
+					.shedule
+						p
+							.schedule-title
+								| График работы:
+							.shedule-content
+								| пн-пт, с 12:00 до 17:00
+						p
+							.schedule-title Адрес
+							.shedule-content
+								| 630102 <br>
+								| Россия, г. Новосибирск, <br>
+								| ул. Зыряновская, 53, <br>
+								| офис 107 (ост. Восход, м. Речной вокзал)
+					.telephone
+						p
+							.schedule-title Телефоны
+							div
+								a.schedule-link(href='tel:+79612265535') +7 (961) 226-55-35
+							div
+								a.schedule-link(href='tel:+79139389973') +7 (913) 938-99-73
+						p
+							span.schedule-title E-mail:
+							a.schedule-link(href='mailto:davsvet2@mail.ru') davsvet2@mail.ru
+						p
+							span.schedule-title Skype:
+							span.schedule-text svetadav7
+						p
+							span.schedule-title ICQ:
+							span.schedule-text 684952655
+						p.separate
+							span.schedule-title Контактное лицо:
+							span.schedule-text Светлана Давыдова
 
 	.itWorks-video-popup-2
 		.container
