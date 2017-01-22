@@ -21,7 +21,7 @@
     "bPopup": "bpopup#latest",
     "jquery": "latest",
     "normalize-css": "latest",
-    "owl.carousel": "latest",
+    "owl.carousel": "OwlCarousel2#^2.2.0",
     "bootstrap-grid-only": "latest",
     "susy": "^2.2.12",
     "fancybox": "^2.1.6"
