@@ -14,7 +14,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     watch = require('gulp-watch'),
     changed = require('gulp-changed'),
-    rigger = require('gulp-rigger'), // іморт файлів в файл like //="../../../bower_components/...
+    // rigger = require('gulp-rigger'), // іморт файлів в файл like //="../../../bower_components/...
     gcmq = require('gulp-group-css-media-queries'), // обєднує media з однаковими breakpoint
     zip = require('gulp-zip'); // обєднує media з однаковими breakpoint
 
@@ -95,7 +95,7 @@ gulp.task('sass-dev', function() {
   return gulp.src(path.src.scss)
     .pipe(plumber())
     .pipe(sourcemaps.init())
-    .pipe(rigger())
+    // .pipe(rigger())
     .pipe(sass({
       style: 'compressed',
       errLogToConsole: true,
@@ -125,7 +125,7 @@ gulp.task('img', function() {
 gulp.task('js', function(){
   return gulp.src(path.src.js)
   .pipe(plumber())
-  .pipe(rigger())
+  // .pipe(rigger())
   .pipe(uglify())
   .pipe(concat('script.js'))
   .pipe(gulp.dest(path.build.js))

@@ -34,7 +34,7 @@ $( document ).ready(function() { // начало document.ready
         });
         return false;
     });
-    
+
     $('.img-wrap .play').on('click',function(){
         $(".itWorks-video-popup-2 #video")[0].src += "&autoplay=1";
         $('.itWorks-video-popup-2').bPopup({
@@ -43,7 +43,7 @@ $( document ).ready(function() { // начало document.ready
             transitionClose: 'slideIn',
             closeClass:'popup-close'
         });
-        return false;        
+        return false;
     });
 
     $('.itWorks-video-popup .popup-close').on('click',function(){
@@ -53,6 +53,7 @@ $( document ).ready(function() { // начало document.ready
     $('.itWorks-video-popup-2 .popup-close').on('click',function(){
         $('.itWorks-video-popup-2 #video').attr('src', '');
         $('.itWorks-video-popup-2 #video').attr('src', url);
+    });
 
     $('.popup-close').on('click',function(){
         $('#video').attr('src', '');
@@ -143,12 +144,12 @@ $( document ).ready(function() { // начало document.ready
 				}
 			}
             else{
-                $('.form-popup-valid .i-label').removeClass('ok').addClass('error');    
+                $('.form-popup-valid .i-label').removeClass('ok').addClass('error');
 			}
 		});
 
 		phone.focusout(function(){
-            // console.log(typeof(phone.val()));            
+            // console.log(typeof(phone.val()));
             var vNumber = phone.val();
 
             if(vNumber.match(/\d/g) !== null && vNumber.match(/\d/g).length == 11){
@@ -173,12 +174,12 @@ $( document ).ready(function() { // начало document.ready
 				}
 			}
             else{
-                $('.intro-form .i-label').removeClass('ok').addClass('error');    
+                $('.intro-form .i-label').removeClass('ok').addClass('error');
 			}
 		});
 
 		phone_h.focusout(function(){
-            // console.log(typeof(phone.val()));            
+            // console.log(typeof(phone.val()));
             var vNumber_h = phone_h.val();
 
             if(vNumber_h.match(/\d/g) !== null && vNumber_h.match(/\d/g).length == 11){
@@ -192,7 +193,7 @@ $( document ).ready(function() { // начало document.ready
 
 
 
-        
+
 
 
 
@@ -273,4 +274,4 @@ function Place(name, latitude, longitude, description){
 //Когда документ загружен полностью - запускаем инициализацию карты.
 google.maps.event.addDomListener(window, 'load', initialize);
 // $(window).on('resize', function(event) {
-// }); 
+// });
