@@ -7,8 +7,29 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
 $( document ).ready(function() { // начало document.ready
 
+
+
+        // var menu = $(".header__top-line");
+
+        // $(window).scroll(function(){
+        //     if ( $(this).scrollTop() > 5){
+        //         menu.removeClass("default").addClass("header__top-line--fixed");
+        //     } else if($(this).scrollTop() <= 5 && menu.hasClass("header__top-line--fixed")) {
+        //         menu.removeClass("header__top-line--fixed")
+        //     }
+        // });//scroll
+    // $(window).on("load",function(){
+    //     $(".header-mnu a").mPageScroll2id();
+    // });
+    
+      $('.header-mnu a[href*="#"], .header-logo a').click(function(){
+        var id=$(this).attr('href'),
+            position = $(id).offset().top;
+        $('body,html').animate({scrollTop: position}, 1000);
+      });
     //First get theiframe URL
     var url = $('#video').attr('src');
+    var url2 = $('#video2').attr('src');
 
     //Then assign the src to null, this then stops the video been playing
     // $('#video').attr('src', '');
@@ -22,7 +43,25 @@ $( document ).ready(function() { // начало document.ready
 		$(this).toggleClass('open');
 	});
 
+    $('.header-call .callBack, .modal-section .callBack, .vlogenie-title .btn').on('click',function(){
+        $('.form-popup-valid').bPopup({
+            modalClose: false,
+            transition: 'slideBack',
+            transitionClose: 'slideIn',
+            closeClass:'callOut'
+        });
+        return false;
+    });
 
+    // $('.modal-section .callBack').on('click',function(){
+    //     $('.form-popup-valid').bPopup({
+    //         modalClose: false,
+    //         transition: 'slideBack',
+    //         transitionClose: 'slideIn',
+    //         closeClass:'callOut'
+    //     });
+    //     return false;
+    // });
 
     $('.video-preview .video-controls').on('click',function(){
         $(".itWorks-video-popup #video")[0].src += "&autoplay=1";
@@ -36,7 +75,7 @@ $( document ).ready(function() { // начало document.ready
     });
     
     $('.img-wrap .play').on('click',function(){
-        $(".itWorks-video-popup-2 #video")[0].src += "&autoplay=1";
+        $(".itWorks-video-popup-2 #video2")[0].src += "&autoplay=1";
         $('.itWorks-video-popup-2').bPopup({
             modalClose: false,
             transition: 'slideBack',
@@ -51,14 +90,10 @@ $( document ).ready(function() { // начало document.ready
         $('.itWorks-video-popup #video').attr('src', url);
     });
     $('.itWorks-video-popup-2 .popup-close').on('click',function(){
-        $('.itWorks-video-popup-2 #video').attr('src', '');
-        $('.itWorks-video-popup-2 #video').attr('src', url);
-
-    $('.popup-close').on('click',function(){
-        $('#video').attr('src', '');
-        $('#video').attr('src', url);
+        $('.itWorks-video-popup-2 #video2').attr('src', '');
+        $('.itWorks-video-popup-2 #video2').attr('src', url2);
     });
-
+    
     /* xeonalex start */
     function currentHashSlider() {
         $('.owl-item.active').find('*[data-hash]').each(function(){
@@ -112,15 +147,7 @@ $( document ).ready(function() { // начало document.ready
     /* xeonalex END */
 
 
-    $('.modal-section .callBack').on('click',function(){
-        $('.form-popup-valid').bPopup({
-            modalClose: false,
-            transition: 'slideBack',
-            transitionClose: 'slideIn',
-            closeClass:'callOut'
-        });
-        return false;
-    });
+
 
 
 
@@ -189,21 +216,6 @@ $( document ).ready(function() { // начало document.ready
 			}
 		});
 
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
 }); // конец document.ready
 // google map
 function initialize() {
@@ -217,7 +229,7 @@ function initialize() {
         // 0 - минимальное увеличение - карта мира
         // 18 - максимально детальный масштаб
         zoom: 16,
-        scrollwheel: true,
+        scrollwheel: false,
         disableDefaultUI: true,
         // styles: [{"featureType":"administrative","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":-100},{"lightness":"50"},{"visibility":"simplified"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"lightness":"30"}]},{"featureType":"road.local","elementType":"all","stylers":[{"lightness":"40"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]},{"featureType":"water","elementType":"labels","stylers":[{"lightness":-25},{"saturation":-100}]}]
         //Тип карты - обычная дорожная карта
@@ -272,5 +284,3 @@ function Place(name, latitude, longitude, description){
 }
 //Когда документ загружен полностью - запускаем инициализацию карты.
 google.maps.event.addDomListener(window, 'load', initialize);
-// $(window).on('resize', function(event) {
-// }); 

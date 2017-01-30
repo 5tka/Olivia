@@ -2,18 +2,18 @@ header.header
     .header__top-line
         .container
             .header-logo
-                a(href="#") 
+                a(href="#home") 
                     img(src="img/logo.png", alt="")
             nav.header-mnu
                 ul
                     li
-                        a(href="#") Принцип работы   
+                        a(href="#work") Принцип работы   
                     li
-                        a(href="#") Показания      
+                        a(href="#problems") Показания      
                     li
-                        a(href="#") Виды тренажеров    
+                        a(href="#type") Виды тренажеров    
                     li            
-                        a(href="#") Контакты 
+                        a(href="#contacts") Контакты 
             .header-call
                 a(href="telto:+7(913)9389973") +7 (913) 938-99-73
                 a(href="#").callBack
@@ -23,9 +23,9 @@ header.header
                     span
                     span
                     span
-    .header__intro-container
+    .header__intro-container#home
         .container
-            .intro-title.wow.slideInDown
+            .intro-title
                 h1
                     | Сиденье <br>
                     span
@@ -37,7 +37,6 @@ header.header
                 .form-wrapper
                     .form-title
                         p Закажите сиденье для себя или ребенка <br>
-                        span 31 декабря и получите скидку 20%!
                     form(action="/")
                         .form-controls
                             label.i-label(for="name")
@@ -46,13 +45,13 @@ header.header
                                 input.i-phone(type="text" id="phone_h" placeholder="Телефон")
                         button(type="submit").callBack
                             | Получить тренажер по скидке
-section.forWhom
+section.forWhom#problems
     .container
-        h2.title.wow.slideInLeft
+        h2.title
             | Для кого создано
         span.sub-title
             | сиденье-тренажер?
-        .forWhom-dscr.wow.fadeIn(data-wow-delay=".3s")
+        .forWhom-dscr
             p
                 span.bold "Лечение движением" 
                 | - суть действия тренажера, разработанного 
@@ -61,7 +60,7 @@ section.forWhom
                 |ограниченных физических нагрузках, перенесенных 
                 |травмах или просто хронической усталости.
         .forWhom-items.fl-l
-            .forWhom-item.wow.fadeInDown
+            .forWhom-item
                 .f-icon
                     img(src="img/whom-icon-1.png", alt="")
                 .f-dscr
@@ -70,7 +69,7 @@ section.forWhom
                         рабочем месте за счет применения 
                         "Спина ОК" - реальность для 
                         руководителей и офисных сотрудников
-            .forWhom-item.wow.fadeInDown(data-wow-delay='.5s')
+            .forWhom-item
                 .f-icon
                     img(src="img/whom-icon-3.png", alt="")
                 .f-dscr
@@ -79,7 +78,7 @@ section.forWhom
                         тренажер во время выполнения домашних 
                         заданий, установив его на любое кресло
         .forWhom-items.fl-r
-            .forWhom-item.wow.fadeInDown(data-wow-delay='.7s')
+            .forWhom-item
                 .f-icon
                     img(src="img/whom-icon-2.png", alt="")
                 .f-dscr
@@ -88,7 +87,7 @@ section.forWhom
                         и времени на физические тренировки - 
                         больше не проблема для профессиональных 
                         водителей
-            .forWhom-item.wow.fadeInDown(data-wow-delay='.9s')
+            .forWhom-item
                 .f-icon
                     img(src="img/whom-icon-4.png", alt="")
                 .f-dscr
@@ -100,9 +99,9 @@ section.forWhom
                 
 section.itWorks
     .container
-        h2.title.wow.slideInLeft
+        h2.title
             | Как это работает?
-        .forWhom-dscr.wow.fadeIn(data-wow-delay=".3s")
+        .forWhom-dscr
             p.
                 Принцип работы "подвижного сиденья" 
                 основан на исследованиях в области 
@@ -114,7 +113,7 @@ section.itWorks
                 образом, без медицинского вмешательства, 
                 а регулярные тренировки обеспечивают 
                 длительный эффект.
-        .itWorks-video.wow.slideInLeft
+        .itWorks-video
             .video-preview
                 img(src="img/preview.jpg", alt="")
                 .video-controls
@@ -130,12 +129,12 @@ section.itWorks
                 p.
                     Действие сиденья-тренажера отличается от эффекта, которое <br> дают физические упражнения, массаж и другие методы стимуляции <br> активности вестибулярного аппарата рядом особенностей.
             ul
-                li.wow.fadeInDown Короткие мышцы позвоночника находятся под слоем других тканей и недосягаемы при массаже. Балансирующие движения во время использования сиденья приводят к естественному восстановлению их тонуса.
-                li.wow.fadeInDown(data-wow-delay=".5s") Именно этими мышцами управлять осознанно человек не способен, что делает невозможным полную проработку позвоночника с помощью тренировок в спортзале.
-                li.wow.fadeInDown(data-wow-delay="1s") Мускулатура позвоночника "запоминает" форму, в которой находится продолжительное время. За счет этого свойства вы получите длительный эффект от регулярного применения тренажера. 
+                li Короткие мышцы позвоночника находятся под слоем других тканей и недосягаемы при массаже. Балансирующие движения во время использования сиденья приводят к естественному восстановлению их тонуса.
+                li Именно этими мышцами управлять осознанно человек не способен, что делает невозможным полную проработку позвоночника с помощью тренировок в спортзале.
+                li Мускулатура позвоночника "запоминает" форму, в которой находится продолжительное время. За счет этого свойства вы получите длительный эффект от регулярного применения тренажера. 
 
 section.modal-section
-    .container.wow.flipInX
+    .container
         h2
             | Узнайте больше о применении сиденья-тренажера - 
         span
@@ -143,13 +142,13 @@ section.modal-section
         a.callBack(href="#")
             | Получить консультацию
 
-section.problems
+section.problems#work
     .container
-        h2.title.wow.slideInLeft
+        h2.title
             | Какие проблемы решает
         span.sub-title
             | универсальный тренажер?
-        .forWhom-dscr.wow.fadeIn(data-wow-delay=".3s")
+        .forWhom-dscr
             p.
                 Благодаря ускорению обменных 
                 процессов налаживается питание 
@@ -161,7 +160,7 @@ section.problems
                 заряда бодрости.
         .problems-items
             .problems-item
-                .problems-img.fl-l.wow.slideInLeft
+                .problems-img.fl-l
                     img(src="img/photo-1.jpg", alt="")
                     .number
                         span
@@ -170,14 +169,14 @@ section.problems
                         | 01
                 .problems-dscr.fl-r
                     ol
-                        li.wow.fadeInDown Положительно влияет на работу нервной системы и способствет улучшению зрения
-                        li.wow.fadeInDown(data-wow-delay='.3s') Помогает справиться с ишемичной болезнью и варикозным расширением вен
-                        li.wow.fadeInDown(data-wow-delay='.5s') Является эффективным методом профилактики и лечения остеохондроза и сколиоза в любом возрасте
-                        li.wow.fadeInDown(data-wow-delay='.7s') Питает ткани и препятствует образованию межпозвонковых грыж всех отделов позвоночника
-                        li.wow.fadeInDown(data-wow-delay='.9s') Эффективное противодействие простатиту, геморрою, варикозному расширению вен, воспалению мочеполовых органов
-                        li.wow.fadeInDown(data-wow-delay='1.1s') За счет иммитации верховой езды формирует мышечный корсет спины и крепкую опору для позвоночника
+                        li Положительно влияет на работу нервной системы и способствет улучшению зрения
+                        li Помогает справиться с ишемичной болезнью и варикозным расширением вен
+                        li Является эффективным методом профилактики и лечения остеохондроза и сколиоза в любом возрасте
+                        li Питает ткани и препятствует образованию межпозвонковых грыж всех отделов позвоночника
+                        li Эффективное противодействие простатиту, геморрою, варикозному расширению вен, воспалению мочеполовых органов
+                        li За счет иммитации верховой езды формирует мышечный корсет спины и крепкую опору для позвоночника
             .problems-item
-                .problems-img.problems-img-2.fl-r.wow.slideInRight
+                .problems-img.problems-img-2.fl-r
                     img(src="img/photo-2.jpg", alt="")
                     .number
                         span
@@ -186,12 +185,12 @@ section.problems
                         | 02
                 .problems-dscr.fl-l
                     ol(start="7")
-                        li.wow.fadeInDown Устраняет боли в спине, чувство зажатости в мышцах после рабочего дня
-                        li.wow.fadeInDown(data-wow-delay='.3s') Корректирует осанку, снимая нагрузку с межпозвоночных дисков
-                        li.wow.fadeInDown(data-wow-delay='.5s') Избавляет от сколиоза, радикулита, остеохондроза, грыжи межпозвонковых дисков
-                        li.wow.fadeInDown(data-wow-delay='.7s') Предотвращает гинекологические и мужские заболевания за счет усиления кровообращения в тазовом дне
-                        li.wow.fadeInDown(data-wow-delay='.9s') Снимает хроническую усталость, улучшает сон и самочувствие
-                        li.wow.fadeInDown(data-wow-delay='1.1s') Компенсирует дефицит движений, восстанавливает после травм и операций
+                        li Устраняет боли в спине, чувство зажатости в мышцах после рабочего дня
+                        li Корректирует осанку, снимая нагрузку с межпозвоночных дисков
+                        li Избавляет от сколиоза, радикулита, остеохондроза, грыжи межпозвонковых дисков
+                        li Предотвращает гинекологические и мужские заболевания за счет усиления кровообращения в тазовом дне
+                        li Снимает хроническую усталость, улучшает сон и самочувствие
+                        li Компенсирует дефицит движений, восстанавливает после травм и операций
 
 
 .itWorks-video-popup

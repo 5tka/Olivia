@@ -723,6 +723,9 @@ location BLOCK
 
 .location {
 	// display: none;
+	.container{
+		padding-bottom: 200px;
+	}
 	background: {
 		color: #fff;
 		image: url(../img/bg/location_bg.jpg);
