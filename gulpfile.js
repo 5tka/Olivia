@@ -135,7 +135,7 @@ gulp.task('js', function(){
 gulp.task('js-vendor', function(){
   return gulp.src(path.src.jsVendor)
   .pipe(plumber())
-  .pipe(rigger())
+  // .pipe(rigger())
   .pipe(uglify())
   .pipe(concat('vendor.js'))
   .pipe(gulp.dest(path.build.jsVendor))

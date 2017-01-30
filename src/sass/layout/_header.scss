@@ -15,20 +15,31 @@
     background-position: center;
     &__top-line {
         font-weight: 700;
-        padding-top: 40px;
+        padding-top: 20px;
         min-height: 45px;
         line-height: 45px;
         color: #fff;
         font-size: 14px;
         text-transform: uppercase;
-        margin-bottom: 120px;
+        @include transition(.5s);
+        // margin-bottom: 120px;
+        position: fixed;
+        width: 100%;
+        background: rgba(46, 65, 89, .84);
+        z-index: 100;
+        padding-top: 20px;
+        .container {
+            padding-bottom: 20px !important;
+        }
     }
     .container {
         padding-top: 0;
+        padding-bottom: 40px;
         @include clearfix;
     }
     &__intro-container {
         // 
+        padding-top: 230px;
     }
     &-logo {
         float: left;
@@ -64,6 +75,9 @@
         a {
             display: block;
         }
+        &--active {
+            border-bottom: 2px solid $green;
+        }
     }
     &-call {
         float: left;
@@ -86,7 +100,7 @@
     }
 }
 .mnu-trigger {
-    position: absolute;
+    position: fixed;
     right: 15px;
     top: 15px;
     display: none;
@@ -129,7 +143,7 @@
 }
 .intro-form {
     @include clearfix;
-    max-width: 1044px;
+    // max-width: 1044px;
     font-weight: 700;
     font-style: italic;
     font-size: 24px;
@@ -140,12 +154,18 @@
     }
 }
 .form-wrapper {
+    margin-top: -180px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+29 */
+    background: -webkit-linear-gradient(top,hsla(0,0%,100%,0),#fff 18%,#fff);
+    background: -webkit-gradient(linear,left top,left bottom,from(hsla(0,0%,100%,0)),color-stop(18%,#fff),to(#fff));
+    background:         linear-gradient(180deg,hsla(0, 0%, 100%, .33) 0,rgb(255, 255, 255) 18%,#fff);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
     text-align: center;
     float: right;
     // width: 40%;
     width: 420px;
     padding: 30px 45px;
-    background: #f3f3f3;
+    // background: #f3f3f3;
     font-size: 14px;
     text-transform: uppercase;
     font-style: normal;
@@ -257,7 +277,7 @@
     position: absolute;
     height: 5px;
     width: 100%;
-    background: #fff;
+    background: #000;
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -348,6 +368,11 @@
         margin-right: 90px;
     }
 }
+@include breakpoint(1000){
+    .form-wrapper{
+        margin-top: 0;
+    }
+}
 @include breakpoint(840) {
     .intro-form .i-title {
         float: none !important;
@@ -433,6 +458,7 @@
     min-height: 960px;
     background-repeat: no-repeat;
     background-position: center bottom;
+    background-position-x: 320px;
     .container {
         @include clearfix;
     }
@@ -542,9 +568,9 @@
     .video-preview {
         position: relative;
         line-height: 0;
-        -webkit-box-shadow: 0 0 20px 5px rgba(0,0,0,.2);
-           -moz-box-shadow: 0 0 20px 5px rgba(0,0,0,.2);
-                box-shadow: 0 0 20px 5px rgba(0,0,0,.2);
+        -webkit-box-shadow: 0 0 20px 0 rgba(0,0,0,.1);
+           -moz-box-shadow: 0 0 20px 0 rgba(0,0,0,.1);
+                box-shadow: 0 0 20px 0 rgba(0,0,0,.1);
 
         .video-controls {
             cursor: pointer;
@@ -632,9 +658,9 @@
         right: -15px;
     }
     iframe {
-        width: 560px;
+        width: 1000px;
         max-width: 100%;
-        height: 300px;
+        height: 500px;
     }
 }
 @include breakpoint(900) {
