@@ -193,12 +193,17 @@ section.problems#work
                         li Компенсирует дефицит движений, восстанавливает после травм и операций
 
 
+
 .itWorks-video-popup
     .container
         .popup-close
             img(src="img/close.png", alt="")
-        iframe#video(src='https://www.youtube.com/embed/RmaQaqssUgk?rel-0', frameborder='0', allowfullscreen='allowfullscreen')
-
+        //- iframe#video(src='https://www.youtube.com/embed/RmaQaqssUgk?rel-0', frameborder='0', allowfullscreen='allowfullscreen')
+        video(width="820")
+            source(src='video/video.ogv', type='video/ogg; codecs="theora, vorbis"')
+            source(src='video/video.mp4', type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+            source(src='video/video.webm', type='video/webm; codecs="vp8, vorbis"')
+            
 
 .form-popup-valid
     .form-wrapper
@@ -212,8 +217,8 @@ section.problems#work
                         input.i-name(type="text" id="name" placeholder="Имя")
                     label.p-label(for="phone")
                         input.i-phone(type="text" id="phone" placeholder="Телефон")
-            .form-buttons
-                a(href="#").callBack.callOut
-                    | Отмена
-                button(type="submit" id="submit").callBack
-                    | Отправить
+                .form-buttons
+                    a(href="#").callBack.callOut
+                        | Отмена
+                    button(type="submit" id="submit").callBack
+                        | Отправить

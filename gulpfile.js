@@ -73,7 +73,7 @@ gulp.task('pug-includes', function() {
   return gulp.src(path.src.pug)
     .pipe(plumber())
     .pipe(pug({
-       pretty: true
+       pretty:  true
     }))
     .on('error', console.log)
     .pipe(gulp.dest(path.build.html))
@@ -85,6 +85,7 @@ gulp.task('pug-templates', function() {
     .pipe(changed(path.build.html, {extension: '.html'}))
     .pipe(plumber())
     .pipe(pug({
+       pretty:  true
     }))
     .on('error', console.log)
     .pipe(gulp.dest(path.build.html))
